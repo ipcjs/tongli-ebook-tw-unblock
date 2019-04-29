@@ -1,0 +1,15 @@
+{
+    "name": "Tongli Ebook Unblock",
+    "description": "解除东立电子书区域限制",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+    },
+    "permissions": [
+        "webRequest",
+        "*://ebook.tongli.com.tw/*",
+        "webRequestBlocking"
+    ]
+}
