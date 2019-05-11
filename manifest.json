@@ -4,12 +4,18 @@
     "version": "0.0.1",
     "manifest_version": 2,
     "background": {
-        "scripts": ["background.js"],
+        "scripts": [
+            "src/background.js"
+        ],
         "persistent": true
     },
     "permissions": [
         "webRequest",
         "*://ebook.tongli.com.tw/*",
         "webRequestBlocking"
-    ]
+    ],
+    "browser_action": {
+        "default_popup": "src/popup.html",
+        "default_icon": "src/images/logo.png"
+    }
 }
