@@ -100,6 +100,7 @@ async function main() {
                                 result.Pages.forEach(page => {
                                     chrome.downloads.download({
                                         url: page.ImageURL,
+                                        conflictAction: 'overwrite',
                                         filename: `${result.Title}/${page.PageNumber}.jpg`,
                                         headers: [
                                             { name: 'Authorization', value: auth }
