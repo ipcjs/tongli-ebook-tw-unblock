@@ -66,6 +66,7 @@ async function main() {
     let $msg = document.getElementById('msg')
     let $output = document.getElementById('output')
     let $result = document.getElementById('result')
+    $result.style.display = 'none'
     let tab = await getCurrentTab()
     let url = new URL(tab.url)
     if (url.host === 'ebook.tongli.com.tw' && url.searchParams.has('bookID')) {
@@ -79,7 +80,7 @@ async function main() {
                     $msg.innerText = '获取下载地址失败, 请刷新页面重试'
                 })
             if (result) {
-                console.log(result)
+                console.log('result', result)
                 $msg.innerHTML = '结果:'
                 $result.style.display = ''
 
@@ -94,6 +95,17 @@ async function main() {
                                 break
                             case 'copy':
                                 copyText($output)
+                                break
+                            case 'download':
+                                result.Pages.forEach(page => {
+                                    chrome.downloads.download({
+                                        url: page.ImageURL,
+                                        filename: `${result.Title}/${page.PageNumber}.jpg`,
+                                        headers: [
+                                            { name: 'Authorization', value: auth }
+                                        ]
+                                    })
+                                })
                                 break
                         }
                     })

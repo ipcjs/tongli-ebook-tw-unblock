@@ -1,7 +1,7 @@
 {
     "name": "Tongli Ebook Unblock",
     "description": "解除東立電子書城区域限制",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "manifest_version": 2,
     "background": {
         "scripts": [
@@ -12,6 +12,7 @@
     "permissions": [
         "webRequest",
         "activeTab",
+        "downloads",
         "webRequestBlocking",
         "*://ebook.tongli.com.tw/*",
         "https://*.azurewebsites.net/"
