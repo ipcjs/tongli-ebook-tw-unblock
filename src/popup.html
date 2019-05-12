@@ -1,5 +1,28 @@
 <html>
-    <body>
-        <h1>TODO</h1>
-    </body>
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            width: 420px;
+        }
+
+        textarea {
+            width: 100%;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="msg"></h2>
+    <div id="result" style="display: none;">
+        <input type="button" value="复制" name="copy">
+        <input type="button" value="复制curl下载命令" name="copy-curl">
+        <input type="button" value="复制YAAW下载链接" name="copy-yaaw">
+        <textarea id="output" rows="8"></textarea>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
 </html>
